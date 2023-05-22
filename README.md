@@ -12,7 +12,7 @@
 #### Notice:
 * ```BASE_URL```: The host contains API and media sources.
 * Project is running on ```Java_17```. If you are using ```Java_1_8```, please config it in the build.gradle (app).
-* ```MVVM``` and ```Coroutines``` are used in the project. But you can choose another approach that you are the most friendly with.
+* ```MVVM``` and ```Coroutines``` are used. But you can choose another approach that you are the most friendly with.
 * Please find and follow the ```TODO``` section in Android Studio to finish the assignment.
 * Create and push to branch ```[YOUR_NAME]/assignment``` after done the test.
 
