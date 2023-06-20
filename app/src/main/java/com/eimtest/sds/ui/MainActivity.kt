@@ -6,16 +6,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
-import androidx.lifecycle.lifecycleScope
 import com.eimtest.sds.R
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -47,35 +41,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
         buttonPrev.setOnClickListener(this)
         buttonNext.setOnClickListener(this)
-
-        viewModel.state
-            .onEach { state ->
-                progressBar.isVisible = state.isLoading
-                if (!state.isLoading && state.playlists.isNotEmpty()) {
-                    // TODO:
-                    //  - Play the music.
-                    //  - Show image on image view.
-                    //  - Display initials text on text view.
-                    Toast.makeText(this, "Data", Toast.LENGTH_SHORT).show()
-                }
-            }
-            .launchIn(lifecycleScope)
-
-        viewModel.getPlaylist()
+        
+        // TODO: Load playlist data
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.buttonPrev -> {
-                // TODO:
-                //  - Back to previous playlist
-                Toast.makeText(this, "Previous clicked!", Toast.LENGTH_SHORT).show()
+                // TODO: Back to previous playlist
             }
 
             R.id.buttonNext -> {
-                // TODO:
-                //  - Go to next playlist
-                Toast.makeText(this, "Next clicked!", Toast.LENGTH_SHORT).show()
+                // TODO: Go to next playlist
             }
         }
     }
